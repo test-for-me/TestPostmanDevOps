@@ -1,0 +1,1 @@
+newman run Postman_TestCase.postman_collection.json -e DevOps_Test.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json

@@ -7,6 +7,24 @@
 	"item": [
 		{
 			"name": "test1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "918fd892-d328-49f5-9b94-230858e02c5f",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response is failed\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -15,11 +33,9 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://reqres.in/api/users?page=2",
-					"protocol": "https",
+					"raw": "{{url}}/api/users?page=2",
 					"host": [
-						"reqres",
-						"in"
+						"{{url}}"
 					],
 					"path": [
 						"api",
